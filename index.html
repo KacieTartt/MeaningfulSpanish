@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meaningful Spanish</title>
+<meta name="description" content="Spanish grammar review, minus the soul-crushing homework platform.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html">🌶️ Meaningful Spanish</a>
+</header>
+<main class="wrap">
+  <div class="hero">
+    <h1>Grammar review that doesn't feel like punishment.</h1>
+    <p>Eight concepts, real practice, instant (occasionally dramatic) feedback. Pick a section, take the drill, take the quiz, retry what you missed. No accounts, no stress, no MindTap.</p>
+  </div>
+
+  <div class="card-grid" id="card-grid">
+    <a class="card" data-section="preterite" href="sections/preterite.html">
+      <span class="emoji">⏱️</span>
+      <h3>Pretérito</h3>
+      <p>Regular, stem-changing, spelling-changing, and "strong" irregular conjugations.</p>
+    </a>
+    <a class="card" data-section="imperfect" href="sections/imperfect.html">
+      <span class="emoji">🌫️</span>
+      <h3>Imperfecto</h3>
+      <p>Background, description, and habitual "used to" actions.</p>
+    </a>
+    <a class="card" data-section="preterite-vs-imperfect" href="sections/preterite-vs-imperfect.html">
+      <span class="emoji">⚔️</span>
+      <h3>Pretérito vs. Imperfecto</h3>
+      <p>The hardest judgment call in the class — extra practice volume here.</p>
+    </a>
+    <a class="card" data-section="direct-object-pronouns" href="sections/direct-object-pronouns.html">
+      <span class="emoji">🎯</span>
+      <h3>Objeto Directo</h3>
+      <p>Lo, la, los, las — and where they're allowed to go in a sentence.</p>
+    </a>
+    <a class="card" data-section="indirect-object-pronouns" href="sections/indirect-object-pronouns.html">
+      <span class="emoji">📬</span>
+      <h3>Objeto Indirecto</h3>
+      <p>Me, te, le, nos, os, les — who's on the receiving end of the action.</p>
+    </a>
+    <a class="card" data-section="double-object-pronouns" href="sections/double-object-pronouns.html">
+      <span class="emoji">🔗</span>
+      <h3>Pronombres Dobles</h3>
+      <p>Stacking indirect + direct pronouns, and the le → se switch.</p>
+    </a>
+    <a class="card" data-section="gustar-verbs" href="sections/gustar-verbs.html">
+      <span class="emoji">💥</span>
+      <h3>Gustar y Similares</h3>
+      <p>Gustar, encantar, molestar, fascinar — "pleasing to," not "liking."</p>
+    </a>
+    <a class="card" data-section="reflexive-verbs" href="sections/reflexive-verbs.html">
+      <span class="emoji">🪞</span>
+      <h3>Verbos Reflexivos</h3>
+      <p>When the subject does it to or for itself. The SRID mnemonic lives here.</p>
+    </a>
+  </div>
+</main>
+<p class="footer-note">Built from real SPN1121C course material, minus the boring parts. 🌮</p>
+
+<script src="js/progress.js"></script>
+<script>
+  document.querySelectorAll("#card-grid .card").forEach((card) => {
+    const sectionId = card.dataset.section;
+    const best = Progress.getBestScore(sectionId);
+    const completed = Progress.getCompleted(sectionId);
+    if (completed) {
+      const badge = document.createElement("span");
+      badge.className = "badge done";
+      badge.textContent = best !== null ? `✓ ${Math.round(best * 100)}%` : "✓ Done";
+      card.appendChild(badge);
+    }
+  });
+</script>
+</body>
+</html>

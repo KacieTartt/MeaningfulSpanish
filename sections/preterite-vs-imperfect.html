@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pretérito vs. Imperfecto — Meaningful Spanish</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html">🌶️ Meaningful Spanish</a>
+  <a class="back-link" href="../index.html">← Menú principal</a>
+</header>
+<main class="wrap">
+  <div class="section-head">
+    <div class="kicker">Sección 3 de 8 — el jefe final</div>
+    <h1>⚔️ Pretérito vs. Imperfecto</h1>
+    <p>The hardest call in the class: interrupting events vs. ongoing background, trigger words that sometimes lie to you, and verbs (conocer, poder, querer, saber) that change meaning depending on which tense you pick.</p>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" data-target="practice-panel">Práctica</button>
+    <button class="tab-btn" data-target="quiz-panel">Quiz con puntaje</button>
+  </div>
+  <div id="practice-panel" class="panel active">
+    <div id="drill-root"></div>
+  </div>
+  <div id="quiz-panel" class="panel">
+    <div id="quiz-root"></div>
+  </div>
+</main>
+<p class="footer-note">Meaningful Spanish — built for review, not stress. 🌮</p>
+
+<script src="../js/progress.js"></script>
+<script src="../js/feedback.js"></script>
+<script src="../js/engine.js"></script>
+<script src="../data/preterite-vs-imperfect.js"></script>
+<script>
+  initTabs(document);
+  QuizEngine.mount({ items: preteriteVsImperfectData, rootEl: document.getElementById("drill-root"), mode: "practice" });
+
+  const quizTab = document.querySelector('[data-target="quiz-panel"]');
+  quizTab.addEventListener("click", () => {
+    const quizRoot = document.getElementById("quiz-root");
+    if (!quizRoot.dataset.mounted) {
+      quizRoot.dataset.mounted = "true";
+      QuizEngine.mount({ items: preteriteVsImperfectData, rootEl: quizRoot, mode: "quiz", sectionId: "preterite-vs-imperfect" });
+    }
+  });
+</script>
+</body>
+</html>
