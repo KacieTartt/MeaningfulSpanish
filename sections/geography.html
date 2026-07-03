@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pronombres Dobles — Meaningful Spanish</title>
+<title>Cultura y Geografía — Meaningful Spanish</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -13,9 +13,9 @@
 </header>
 <main class="wrap">
   <div class="section-head">
-    <div class="kicker">Sección 6 de 9</div>
-    <h1>🔗 Pronombres de Objeto Dobles</h1>
-    <p>Stack an indirect AND a direct object pronoun in one sentence, and watch "le" quietly turn into "se" right before your eyes.</p>
+    <div class="kicker">Sección 9 de 9</div>
+    <h1>🌎 Cultura y Geografía</h1>
+    <p>Every Spanish-speaking country and its capital — because eventually someone's going to ask you this at a family party, a trivia night, or on a study-abroad application, and "I don't know" isn't a great answer.</p>
   </div>
   <div class="tabs">
     <button class="tab-btn active" data-target="practice-panel">Práctica</button>
@@ -33,17 +33,17 @@
 <script src="../js/progress.js"></script>
 <script src="../js/feedback.js"></script>
 <script src="../js/engine.js"></script>
-<script src="../data/double-object-pronouns.js"></script>
+<script src="../data/geography.js"></script>
 <script>
   initTabs(document);
-  QuizEngine.mount({ items: doubleObjectPronounsData, rootEl: document.getElementById("drill-root"), mode: "practice" });
+  QuizEngine.mount({ items: geographyData, rootEl: document.getElementById("drill-root"), mode: "practice" });
 
   const quizTab = document.querySelector('[data-target="quiz-panel"]');
   quizTab.addEventListener("click", () => {
     const quizRoot = document.getElementById("quiz-root");
     if (!quizRoot.dataset.mounted) {
       quizRoot.dataset.mounted = "true";
-      QuizEngine.mount({ items: doubleObjectPronounsData, rootEl: quizRoot, mode: "quiz", sectionId: "double-object-pronouns" });
+      QuizEngine.mount({ items: geographyData, rootEl: quizRoot, mode: "quiz", sectionId: "geography" });
     }
   });
 </script>
